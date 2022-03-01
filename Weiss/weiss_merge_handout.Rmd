@@ -1,0 +1,158 @@
+---
+title: "Weiss Review Reports"
+output:
+  pdf_document: default
+  html_document: default
+font-family: Arial
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+```{r cars}
+weiss_fall2021 <- read.csv(file="/Users/parthukalva/Downloads/Weiss_merge/Fall 2021 Application Scores_Compiled.xlsx - Sheet1 (1).csv", header=TRUE, sep=",", stringsAsFactors = FALSE)
+
+num <- weiss_fall2021$number[i]
+firstname <- weiss_fall2021$First.name[i]
+lastname <- weiss_fall2021$Last.Name[i]
+currentposition <- weiss_fall2021$Current.Position[i]
+department <- weiss_fall2021$Department[i]
+school <- weiss_fall2021$School[i]
+copi1 <- weiss_fall2021$MTCoInvestigatorFull.Name.1[i]
+copi2 <- weiss_fall2021$MTCoInvestigatorFull.Name.2[i]
+copi3 <- weiss_fall2021$MTCoInvestigatorFull.Name.3[i]
+copi4 <- weiss_fall2021$MTCoInvestigatorFull.Name.4[i]
+
+title <- weiss_fall2021$Project.title[i]
+amount <- weiss_fall2021$Amount[i]
+chaircomment <- weiss_fall2021$Committee.Chair.Comments[i]
+sheperd_high <- weiss_fall2021$Shepherd.High[i]
+sheperd_low <- weiss_fall2021$Shepherd.Low[i]
+
+simple_avg <- weiss_fall2021$Average.w.AB[i]
+weighted_avg <- weiss_fall2021$Weighted.AVG[i]
+kl <- weiss_fall2021$KL[i]
+mb <- weiss_fall2021$MB[i]
+aw <- weiss_fall2021$AW[i]
+tm <- weiss_fall2021$TM[i]
+es <- weiss_fall2021$ES[i]
+ob <- weiss_fall2021$OB[i]
+sc <- weiss_fall2021$SC[i]
+ab <- weiss_fall2021$AB[i]
+mk <- weiss_fall2021$MK[i]
+
+applicant_commentKL <- weiss_fall2021$KL.Applicant[i]
+committee_commentKL <- weiss_fall2021$KL.Committee[i]
+cost_commentKL <- weiss_fall2021$KL.Cost[i]
+
+applicant_commentMB <- weiss_fall2021$MB.Applicant[i]
+committee_commentMB <- weiss_fall2021$MB.Committee[i]
+cost_commentMB <- weiss_fall2021$MB.Cost[i]
+
+applicant_commentAW <- weiss_fall2021$AW.applicant[i]
+committee_commentAW <- weiss_fall2021$AW.Committee[i]
+cost_commentAW <- weiss_fall2021$AW.Cost[i]
+
+applicant_commentTM <- weiss_fall2021$TM.Applicant[i]
+committee_commentTM <- weiss_fall2021$TM.Committee[i]
+cost_commentTM <- weiss_fall2021$TM.Cost[i]
+
+applicant_commentES <- weiss_fall2021$ES.Applicant[i]
+committee_commentES <- weiss_fall2021$ES.Committee[i]
+cost_commentES <- weiss_fall2021$ES.Cost[i]
+
+applicant_commentOB <- weiss_fall2021$OB.Applicant[i]
+committee_commentOB <- weiss_fall2021$OB.Committee[i]
+cost_commentOB <- weiss_fall2021$OB.Cost[i]
+
+applicant_commentSC <- weiss_fall2021$SC.Applicant[i]
+committee_commentSC <- weiss_fall2021$SC.Committee[i]
+cost_commentSC <- weiss_fall2021$SC.Cost[i]
+
+applicant_commentAB <- weiss_fall2021$AB.Applicant[i]
+committee_commentAB <- weiss_fall2021$AB.Committee[i]
+cost_commentAB <- weiss_fall2021$AB.Cost[i]
+
+applicant_commentMK <- weiss_fall2021$MK.Applicant[i]
+committee_commentMK <- weiss_fall2021$MK.Committee[i]
+cost_commentMK <- weiss_fall2021$MK.Cost[i]
+
+marginalbenefit <- weiss_fall2021$Sr.Faculty..The.descriptions.provided.of.marginal.benefit.will.also.be.closely.reviewed.for.senior.faculty.applications.[i]
+path_to_scale <- weiss_fall2021$Sr.Faculty..The.descriptions.provided.of.pathway.to.scale..will.also.be.closely.reviewed.for.senior.faculty.applications[i]
+```
+
+## Number
+
+`r num`
+
+## PI
+
+**`r firstname`**, **`r lastname`**, `r currentposition`,`r department`, `r school`
+
+## CO PIs
+
+`r copi1` `r copi2` `r copi3` `r copi4`
+
+## PROJECT TITLE
+
+`r title`
+
+## AMOUNT REQUESTED
+
+`r amount`
+
+## Committee Chair Comments
+
+`r chaircomment`
+
+## Sheperd High
+
+`r sheperd_high`
+
+## Sheperd Low
+
+`r sheperd_low`
+
+## Committee Scores
+
+Reviewer    | Score
+----------- | -------------
+KL          | `r kl`
+MB          | `r mb` 
+AW          | `r aw`
+TM          | `r tm` 
+ES          | `r es`
+OB          | `r ob` 
+SC          | `r sc`
+AB          | `r ab` 
+MK          | `r mk` 
+Simple AVG  | `r simple_avg`
+Weighted AVG | `r weighted_avg`
+
+## Committee Comments
+
+Reviewer           |  Applicant Comments     | Committee Comments      | Cost Comments      |
+------------------ | ----------------------- | ----------------------- | ------------------ | 
+Kevin `r kl`       | `r applicant_commentKL` | `r committee_commentKL` | `r cost_commentKL` |
+Marianne `r mb`    | `r applicant_commentMB` | `r committee_commentMB` | `r cost_commentMB` |
+Andrew `r aw`      | `r applicant_commentAW` | `r committee_commentAW` | `r cost_commentAW` |
+Ted `r tm`         | `r applicant_commentTM` | `r committee_commentTM` | `r cost_commentTM` |
+Ernesto `r es`     | `r applicant_commentES` | `r committee_commentES` | `r cost_commentES` |
+Oriana `r ob`      | `r applicant_commentOB` | `r committee_commentOB` | `r cost_commentOB` |
+Shawn `r sc`       | `r applicant_commentSC` | `r committee_commentSC` | `r cost_commentSC` |
+Abhijit `r ab`     | `r applicant_commentAB` | `r committee_commentAB` | `r cost_commentAB` |
+Michael `r mk`     | `r applicant_commentMK` | `r committee_commentMK` | `r cost_commentMK` |
+
+
+## Senior Faculty Text For Extra Consideration
+
+**Marginal Benefit**
+
+`r marginalbenefit`
+
+**Pathways to Scale**
+
+`r path_to_scale`
